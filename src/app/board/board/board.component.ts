@@ -38,16 +38,16 @@ export class BoardComponent implements OnInit {
   }
 
   clicked(card) {
-    this.print(card)
     if(this.isThirdCard()) {
       //doe hier iets mee TODO
-      this.turnCard(this.firstCard);
-      this.turnCard(this.secondCard);
+      this.toggleCard(this.firstCard);
+      this.toggleCard(this.secondCard);
       this.firstCard = null;
       this.secondCard = null;
-      this.turnCard(card);
+      this.turnCard(card[3]);
     } else {
-      this.turnCard(card);
+      this.turnCard(card[3]);
+      
     }
   }
   
