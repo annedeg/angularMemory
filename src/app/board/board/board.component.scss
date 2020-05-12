@@ -1,0 +1,24 @@
+table#speelveld { table-layout:fixed;   margin:0 auto; }
+table#speelveld td { cursor:pointer; text-align:center; color:white; font-size:large; font-weight:bold; }
+
+  table#meta { position:fixed; right:4vw; top:10vw;  width: 25vw; height:70vh; }
+  table#meta td { vertical-align:top; text-align:left; padding:1%; }
+  @media only screen and (orientation:landscape) {
+    table#speelveld { width:80vh; height:80vh; border-spacing:1vh;}
+  }
+  @media only screen and (orientation:portrait) {
+    table#speelveld { width:70vw; height:70vw; border-spacing:1vw;}
+  }
+  app-card {
+    width: 100%;
+    height: 100%;
+}
+
+table { 
+    td.inactive { background-color:red; }
+    td.active { background-color:green; }
+    td.found{ background-color:purple; cursor:default; }
+    td {
+        background-color: blue;
+    }
+}
