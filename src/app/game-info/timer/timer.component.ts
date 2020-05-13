@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TimerServiceService } from 'src/app/timer-service.service';
 
 @Component({
   selector: 'app-timer',
@@ -6,10 +7,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./timer.component.scss']
 })
 export class TimerComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  startTime:number;
+ 
+  constructor(private timerService: TimerServiceService) {
+    
   }
 
+  ngOnInit() {
+    this.timerService.sharedCurrentTime.subscribe(message => this.startTime = message)
+    this.setCurrentTime();
+    var that = this;
+    setInterval(function() {
+      that.setCurrentTime()
+    },1);
+  }
+
+  setCurrentTime() {
+    let dateTime = new Date().getTime();
+    this.timerService.setTime(dateTime);
+  }
 }

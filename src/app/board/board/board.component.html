@@ -1,7 +1,8 @@
-<table id="speelveld" elem-ready="init()">
+<table id="speelveld">
 <tbody>
     <tr *ngFor='let boardX of board'>
-        <td (click)="clicked(card)" *ngFor='let card of boardX' id='{{card[3]}}'>{{karakter}}</td>
+        <td *ngFor='let card of boardX' (click)="clicked(card)" id='{{card[3]}}'>{{karakter}}</td>
     </tr>
 </tbody>
 </table>
+{{currentTime}}

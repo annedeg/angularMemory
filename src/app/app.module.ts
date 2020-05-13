@@ -8,6 +8,7 @@ import { CardSettingsComponent } from './game-settings/card-settings/card-settin
 import { CardColorSettingsComponent } from './game-settings/card-color-settings/card-color-settings.component';
 import { LeaderboardComponent } from './game-settings/leaderboard/leaderboard.component';
 import { TimerComponent } from './game-info/timer/timer.component';
+import { TimerServiceService } from './timer-service.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +22,7 @@ import { TimerComponent } from './game-info/timer/timer.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [TimerServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
